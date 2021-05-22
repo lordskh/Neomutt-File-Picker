@@ -1,6 +1,6 @@
 #!/bin/sh
 
-tmpfile=.config/mutt/tmpfile
+tmpfile=/tmp/muttattach
     
 if \[ -z "$1" \]; then
     # ranger --choosefiles $tmpfile &&    # Use Ranger
