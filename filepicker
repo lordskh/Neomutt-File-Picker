@@ -4,7 +4,8 @@ tmpfile=.config/mutt/tmpfile
     
 if \[ -z "$1" \]; then
     # ranger --choosefiles $tmpfile &&    # Use Ranger
-    vifm --choose-files $tmpfile &&       # Use Vifm
+    # vifm --choose-files $tmpfile &&     # Use Vifm
+    picker > $tmpfile &&                  # Use nnn (https://github.com/jarun/nnn/blob/master/plugins/picker)  
     sed -i 's/ /^V /g' $tmpfile &&
     echo "$(awk 'BEGIN {printf "%s", "push "} {printf "%s", "<attach-file>\""$0"\"<enter>"}'  $tmpfile)" > $tmpfile
 elif \[ $1 == "clean" \]; then
